@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpeg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpeg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpeg">
+  <link rel="mask-icon" href="/images/avatar.jpeg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://micsay.com').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="细水会流长">
+<meta property="og:url" content="https://micsay.com/index.html">
+<meta property="og:site_name" content="细水会流长">
+<meta property="article:author" content="崔怀祥">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://micsay.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
+  };
+</script>
+
+  <title>细水会流长</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="细水会流长" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">细水会流长</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">不积跬步，无以至千里</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://micsay.com/2020/01/08/get-start-on-vscode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="崔怀祥">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="细水会流长">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/08/get-start-on-vscode/" class="post-title-link" itemprop="url">深入剖析 Visual Studio Code</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-08 23:20:46" itemprop="dateCreated datePublished" datetime="2020-01-08T23:20:46+08:00">2020-01-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-16 23:42:55" itemprop="dateModified" datetime="2020-01-16T23:42:55+08:00">2020-01-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>特别声明：本文未经许可禁止转载</p>
+</blockquote>
+<h3 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h3><ul>
+<li><code>vscode</code>是微软在<code>Electron</code>的基础上使用TypeScript开发的</li>
+<li>本文是基于vscode 1.36.0版本的基础上分析的</li>
+<li>本文重点解析vscode工程中，我认为值得学习的地方</li>
+<li>如有问题，可以留言</li>
+</ul>
+<h3 id="Chromium"><a href="#Chromium" class="headerlink" title="Chromium"></a>Chromium</h3><p>要讲<code>Electron</code>，必须先说<code>Chromium</code>。<code>Chromium</code>使用了多进程架构，分为<code>Browser Process</code>和<code>Render Process</code>，<code>Render Process</code>使用<code>Blink</code>和<code>V8</code>，<code>Blink</code>用于计算布局，<code>V8</code>用于运行<code>JavaScript</code>代码，真正渲染到屏幕上一个一个的像素，是在<code>Browser Process</code>完成的，<code>Browser Process</code>和<code>Render Process</code>通过<code>IPC进程通信</code>（使用Mojo），<code>Browser Process</code>可以保证安全（用于渲染到屏幕，管理Cookie、Storage、网络请求等），而<code>Render Process</code>是在沙箱里面运行的。</p>
+<h3 id="Electron"><a href="#Electron" class="headerlink" title="Electron"></a>Electron</h3><p><code>Electron</code>在<code>Chromuim</code>基础上，给<code>Browser Process</code>和<code>Render Process</code>都加进了<code>Node Environment</code>，这样，带来了<code>Node</code>开发者，带来了丰富的NPM包，并且，不论是在<code>Browser Process</code>还是<code>Render Process</code>，都能直接调用<code>Node API</code>，从而获得Native能力。同时，<code>Electron</code>还给<code>Browser Process</code>和<code>Render Process</code>加进了<code>Electron API</code>，为开发者提供<code>Browser Process</code>和<code>Render Process</code>的IPC通信API，以及提供一些必要的功能。<br>以下用主进程表示Browser Process，用渲染进程表示Render Process</p>
+<blockquote>
+<p>崔的感慨：这个世界不过是简单的数学，数字（元素、基础事物），加减乘除（公式），以及等于号（认可不认可或是不是真理）</p>
+</blockquote>
+<h3 id="为方便后文理解，先讲一下vscode初始化过程"><a href="#为方便后文理解，先讲一下vscode初始化过程" class="headerlink" title="为方便后文理解，先讲一下vscode初始化过程"></a>为方便后文理解，先讲一下vscode初始化过程</h3><blockquote>
+<p>为方便起见，文件名不加后缀，比如<code>src/main</code>实际为<code>src/main.js</code>，而<code>src/vs/code/electron-main/main</code>实际为<code>src/vs/code/electron-main/main.ts</code></p>
+</blockquote>
+<ul>
+<li>Electron根据根目录下package.json文件中的main字段，在主进程加载<code>src/main</code>，处理本地语言配置以及<code>process.env</code></li>
+<li>加载<code>src/vs/code/electron-main/main</code>，实例化<code>CodeMain</code>类，调用该类中的<code>main()</code>方法，创建主进程中外层的<code>InstantiationService</code>,并实例化<code>CodeApplication</code>类，调用该类中的<code>startup()</code>方法<blockquote>
+<p><code>InstantiationService</code>用于实例化其他类，使得其他类在主进程或者渲染进程中，在保持单例的同时又能很方便的作为构造器参数传入，这个类是vscode工程中实现依赖注入的重要部分</p>
+</blockquote>
+</li>
+<li>在<code>CodeApplication</code>类的<code>startup()</code>方法中，再次创建<code>InstantiationService</code>，该<code>InstantiationService</code>是外层<code>InstantiationService</code>的<code>child</code>，并且如果某个类的实例在当前窗口的<code>InstantiationService</code>中找不到时，会去外层的<code>InstantiationService</code>中查找，然后实例化各个<code>Service</code>类，并最终在<code>src/vs/code/electron-main/window</code>中调用<code>new BrowserWindow(options)</code>，打开窗口，携带处理完毕的配置参数加载渲染进程的代码<code>src/vs/code/electron-browser/workbench/workbench</code></li>
+<li>加载<code>src/vs/workbench/electron-browser/main</code>，实例化渲染进程各个<code>Service</code>类放入<code>serviceCollection</code>，然后用<code>serviceCollection</code>去实例化渲染进程的<code>InstantiationService</code></li>
+<li>加载后续代码，用TypeScript操作DOM，计算Layout，生成页面</li>
+</ul>
+<h3 id="用Service划分各个功能的界线"><a href="#用Service划分各个功能的界线" class="headerlink" title="用Service划分各个功能的界线"></a>用Service划分各个功能的界线</h3><p><code>vscode</code>中有许多<code>Service</code>，有的位于主进程，有的位于渲染进程，有的只在主进程使用，有的只在渲染进程使用，有的在主进程中定义逻辑，在渲染进程中通过Electron提供的IPC建立Proxy使用（对于<code>Service</code>使用者来说无感知），<code>Service</code>位于<code>src/vs/platform</code>目录，主要有<code>IInstantiationService</code>,<code>IEnvironmentService</code>,<code>IFileService</code>,<code>ILayoutService</code>,<code>INotificationService</code>,<code>IOpenerService</code>,<code>IStorageService</code>,<code>IWindowsService</code>,<code>IWindowsMainService</code>,<code>IWorkspacesService</code>,<code>IWorkspacesMainService</code>等</p>
+<h4 id="依赖注入Dependency-Injection"><a href="#依赖注入Dependency-Injection" class="headerlink" title="依赖注入Dependency Injection"></a>依赖注入Dependency Injection</h4><p>关于依赖注入的整体介绍，vscode wiki已经讲的很清楚了:</p>
+<blockquote>
+<p>The code is organized around services of which most are defined in the <code>platform</code> layer. Services get to its clients via <code>constructor injection</code>.<br>A service definition is two parts: (1) the interface of a service, and (2) a service identifier - the latter is required because TypeScript doesn’t use nominal but structural typing. A service identifier is a decoration (as proposed for ES7) and should have the same name as the service interface.<br>Declaring a service dependency happens by adding a corresponding decoration to a constructor argument. In the snippet below <code>@IModelService</code> is the service identifier decoration and <code>IModelService</code> is the (optional) type annotation for this argument. When a dependency is optional, use the <code>@optional</code> decoration otherwise the instantiation service throws an error.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Client &#123;</span><br><span class="line">  constructor(</span><br><span class="line">    @IModelService modelService: IModelService, </span><br><span class="line">    @optional(IEditorService) editorService: IEditorService</span><br><span class="line">  ) &#123;</span><br><span class="line">    &#x2F;&#x2F; use services</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Use the instantiation service to create instances for service consumers, like so <code>instantiationService.createInstance(Client)</code>. Usually, this is done for you when being registered as a contribution, like a Viewlet or Language.</p>
+</blockquote>
+<p>下面从代码角度说明一下：</p>
+<ul>
+<li>使用<code>decoration</code>（注解）将依赖以变量的形式存到<code>Class</code>上<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; src&#x2F;vs&#x2F;platform&#x2F;instantiation&#x2F;common&#x2F;instantiation.ts</span><br><span class="line">export function createDecorator&lt;T&gt;(serviceId: string): ServiceIdentifier&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">	if (_util.serviceIds.has(serviceId)) &#123;</span><br><span class="line">		return _util.serviceIds.get(serviceId)!;</span><br><span class="line">	&#125;</span><br><span class="line">    &#x2F;&#x2F;根据TypeScript的规定，实现注解函数</span><br><span class="line">	const id &#x3D; &lt;any&gt;function (target: Function, key: string, index: number): any &#123;</span><br><span class="line">		if (arguments.length !&#x3D;&#x3D; 3) &#123;</span><br><span class="line">			throw new Error(&#39;@IServiceName-decorator can only be used to decorate a parameter&#39;);</span><br><span class="line">		&#125;</span><br><span class="line">		storeServiceDependency(id, target, index, false);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	id.toString &#x3D; () &#x3D;&gt; serviceId;</span><br><span class="line"></span><br><span class="line">	_util.serviceIds.set(serviceId, id);</span><br><span class="line">	return id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function storeServiceDependency(id: Function, target: Function, index: number, optional: boolean): void &#123;</span><br><span class="line">    &#x2F;&#x2F; 在运行时，将注解保存到target（Class），方便之后计算graph</span><br><span class="line">	if (target[_util.DI_TARGET] &#x3D;&#x3D;&#x3D; target) &#123;</span><br><span class="line">		target[_util.DI_DEPENDENCIES].push(&#123; id, index, optional &#125;);</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		target[_util.DI_DEPENDENCIES] &#x3D; [&#123; id, index, optional &#125;];</span><br><span class="line">		target[_util.DI_TARGET] &#x3D; target;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>根据已有信息计算依赖，构造有向图</li>
+<li>找出出度为0的节点，并从这些节点开始，用<code>instantiationService.createInstance(Client)</code>初始化实例<pre class=mermaid>
+graph LR;
+  Class-A-->Dependence-Class-B;
+  Dependence-Class-B-->Dependence-Class-C;
+  Class-A-->Dependence-Class-D;
+  Dependence-Class-D-->Dependence-Class-E;
+  Dependence-Class-D-->Dependence-Class-F;
+</pre>
+<blockquote>
+<p>其中，Class-A为当前需要实例化的类，graph生成完毕之后，根据规则，先实例化Dependence-Class-C、Dependence-Class-E、Dependence-Class-F，再实例化Dependence-Class-B、Dependence-Class-D，最后才实例化Class-A</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; src&#x2F;vs&#x2F;platform&#x2F;instantiation&#x2F;common&#x2F;instantiationService.ts</span><br><span class="line">private _createAndCacheServiceInstance&lt;T&gt;(id: ServiceIdentifier&lt;T&gt;, desc: SyncDescriptor&lt;T&gt;, _trace: Trace): T &#123;</span><br><span class="line">		type Triple &#x3D; &#123; id: ServiceIdentifier&lt;any&gt;, desc: SyncDescriptor&lt;any&gt;, _trace: Trace &#125;;</span><br><span class="line">        &#x2F;&#x2F; 有向图，保存出度和入度</span><br><span class="line">		const graph &#x3D; new Graph&lt;Triple&gt;(data &#x3D;&gt; data.id.toString());</span><br><span class="line"></span><br><span class="line">		function throwCycleError() &#123;</span><br><span class="line">			const err &#x3D; new Error(&#39;[createInstance] cyclic dependency between services&#39;);</span><br><span class="line">			err.message &#x3D; graph.toString();</span><br><span class="line">			throw err;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		let count &#x3D; 0;</span><br><span class="line">		const stack &#x3D; [&#123; id, desc, _trace &#125;];</span><br><span class="line">		while (stack.length) &#123;</span><br><span class="line">			const item &#x3D; stack.pop()!;</span><br><span class="line">			graph.lookupOrInsertNode(item);</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; TODO@joh use the graph to find a cycle</span><br><span class="line">			&#x2F;&#x2F; a weak heuristic for cycle checks</span><br><span class="line">			if (count++ &gt; 100) &#123;</span><br><span class="line">				throwCycleError();</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; check all dependencies for existence and if they need to be created first</span><br><span class="line">			let dependencies &#x3D; _util.getServiceDependencies(item.desc.ctor);</span><br><span class="line">			for (let dependency of dependencies) &#123;</span><br><span class="line"></span><br><span class="line">				let instanceOrDesc &#x3D; this._getServiceInstanceOrDescriptor(dependency.id);</span><br><span class="line">				if (!instanceOrDesc &amp;&amp; !dependency.optional) &#123;</span><br><span class="line">					console.warn(&#96;[createInstance] $&#123;id&#125; depends on $&#123;dependency.id&#125; which is NOT registered.&#96;);</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				if (instanceOrDesc instanceof SyncDescriptor) &#123;</span><br><span class="line">					const d &#x3D; &#123; id: dependency.id, desc: instanceOrDesc, _trace: item._trace.branch(dependency.id, true) &#125;;</span><br><span class="line">                    &#x2F;&#x2F; 从item节点指向d节点</span><br><span class="line">					graph.insertEdge(item, d);</span><br><span class="line">					stack.push(d);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		while (true) &#123;</span><br><span class="line">            &#x2F;&#x2F; 找出出度为0的节点</span><br><span class="line">			let roots &#x3D; graph.roots();</span><br><span class="line"></span><br><span class="line">			&#x2F;&#x2F; if there is no more roots but still</span><br><span class="line">			&#x2F;&#x2F; nodes in the graph we have a cycle</span><br><span class="line">			if (roots.length &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">				if (!graph.isEmpty()) &#123;</span><br><span class="line">					throwCycleError();</span><br><span class="line">				&#125;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			for (let &#123; data &#125; of roots) &#123;</span><br><span class="line">				&#x2F;&#x2F; create instance and overwrite the service collections</span><br><span class="line">				const instance &#x3D; this._createServiceInstanceWithOwner(data.id, data.desc.ctor, data.desc.staticArguments, data.desc.supportsDelayedInstantiation, data._trace);</span><br><span class="line">				this._setServiceInstance(data.id, instance);</span><br><span class="line">				graph.removeNode(data);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return &lt;T&gt;this._getServiceInstanceOrDescriptor(id);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></li>
+<li>值得说明的是，实例化是支持懒加载的，懒加载使用代理模式，懒加载的实现原理如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">private _createServiceInstance&lt;T&gt;(ctor: any, args: any[] &#x3D; [], _supportsDelayedInstantiation: boolean, _trace: Trace): T &#123;</span><br><span class="line">		if (!_supportsDelayedInstantiation || !_canUseProxy) &#123;</span><br><span class="line">			&#x2F;&#x2F; eager instantiation or no support JS proxies (e.g. IE11)</span><br><span class="line">			return this._createInstance(ctor, args, _trace);</span><br><span class="line"></span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			&#x2F;&#x2F; Return a proxy object that&#39;s backed by an idle value. That</span><br><span class="line">			&#x2F;&#x2F; strategy is to instantiate services in our idle time or when actually</span><br><span class="line">			&#x2F;&#x2F; needed but not when injected into a consumer</span><br><span class="line">			const idle &#x3D; new IdleValue(() &#x3D;&gt; this._createInstance&lt;T&gt;(ctor, args, _trace));</span><br><span class="line">			return &lt;T&gt;new Proxy(Object.create(null), &#123;</span><br><span class="line">				get(_target: T, prop: PropertyKey): any &#123;</span><br><span class="line">					return idle.getValue()[prop];</span><br><span class="line">				&#125;,</span><br><span class="line">				set(_target: T, p: PropertyKey, value: any): boolean &#123;</span><br><span class="line">					idle.getValue()[p] &#x3D; value;</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Part"><a href="#Part" class="headerlink" title="Part"></a>Part</h3><p>打开vscode并新建一个窗口（默认配置下），可以将窗口分成几大部分：</p>
+<ul>
+<li>TitleBarPart，位于顶部</li>
+<li>ActivityBarPart，位于最左侧，大部分由Icon构成</li>
+<li>SideBarPart，紧贴ActiviyBarPart右侧</li>
+<li>EditorPart，编辑器</li>
+<li>PanelPart，位于编辑器下面，由Terminal等构成</li>
+<li>StatusBarPart，位于最下面，显示状态、分支等<br>可见，vscode视图由Part构成。<code>Part</code>是vscode工程中的一个基础类，定义了许多抽象方法，其中，<code>protected createContentArea(parent: HTMLElement, options?: object): HTMLElement | null</code>方法，使用TypeScript操作DOM来用来定义视图</li>
+</ul>
+<h4 id="Part之用TypeScript操作DOM"><a href="#Part之用TypeScript操作DOM" class="headerlink" title="Part之用TypeScript操作DOM"></a>Part之用TypeScript操作DOM</h4><p>在<code>src/vs/base/browser/ui</code>目录下，定义了许多基础的组件，比如<code>SelectBox</code>,用<code>dom.append(container, $(&#39;.option-text&#39;));</code>形式和CSS，定义界面。</p>
+<blockquote>
+<p>崔的感概：定义好一个概念（抽象），然后充分利用好这个概念</p>
+</blockquote>
+<h3 id="Command机制"><a href="#Command机制" class="headerlink" title="Command机制"></a>Command机制</h3><p>Command可以说是vscode定义的另一个非常好用的概念。他可以让用户通过<code>Shift+Command+P</code>选择Command然后执行，并且赋予了<code>vscode Extension</code>扩展Command的能力。Command支持插件进程和vscode进程相互调用。</p>
+<h3 id="Extension（插件）机制"><a href="#Extension（插件）机制" class="headerlink" title="Extension（插件）机制"></a>Extension（插件）机制</h3><p>软件开发中的开闭原则：开放扩展，关闭修改。Extension便是开闭原则的一个很好的实现。Chrome有插件，Cocos有插件，Hexo有插件，Webpack有插件，Gulp有插件，vscode也有插件</p>
+<blockquote>
+<p>崔的感慨：Extension就如游戏中的挂，能够开挂，说明这个游戏很火很好玩，另外，挂其实赋予了某些人特权，特权总是能够吸引人</p>
+</blockquote>
+<p>vscode内置插件在<code>extension</code>目录下，内置插件分成两种，一种是本地内置插件，另一种是打包是从Extension Markets下载的内置插件，插件开发文档<a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">点这</a></p>
+<h3 id="Gulp编译打包"><a href="#Gulp编译打包" class="headerlink" title="Gulp编译打包"></a>Gulp编译打包</h3><p>Gulp官方介绍如下：</p>
+<blockquote>
+<ul>
+<li>Automation - gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.</li>
+<li>Platform-agnostic - Integrations are built into all major IDEs and people are using gulp with PHP, .NET, Node.js, Java, and other platforms.</li>
+<li>Strong Ecosystem - Use npm modules to do anything you want + over 2000 curated plugins for streaming file transformations</li>
+<li>Simple - By providing only a minimal API surface, gulp is easy to learn and simple to use</li>
+</ul>
+</blockquote>
+<p>vscode打包脚本位于<code>build</code>目录下，在执行<code>gulp watch</code>之后，gulp会首先加载根目录的<code>gulpfile.js</code>文件，进而加载<code>build</code>目录下一系列<code>gulp.*.js</code>文件，<code>build/gulp.*.js</code>文件中定义了许多<code>gulp task</code>，各个task可以相互依赖。如果想运行vscode，可以参考<a href="https://github.com/microsoft/vscode/wiki/How-to-Contribute" target="_blank" rel="noopener">官方文档</a>。</p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle</a><br><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/decorators.html</a><br><a href="https://github.com/microsoft/vscode/wiki/Source-Code-Organization" target="_blank" rel="noopener">https://github.com/microsoft/vscode/wiki/Source-Code-Organization</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy</a></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://micsay.com/2020/01/07/how-to-learn-a-project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="崔怀祥">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="细水会流长">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/07/how-to-learn-a-project/" class="post-title-link" itemprop="url">怎样选择并学习一个开源项目</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-07 23:22:23" itemprop="dateCreated datePublished" datetime="2020-01-07T23:22:23+08:00">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-08 00:55:05" itemprop="dateModified" datetime="2020-01-08T00:55:05+08:00">2020-01-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">方法</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="怎样选择一个开源项目去学习"><a href="#怎样选择一个开源项目去学习" class="headerlink" title="怎样选择一个开源项目去学习"></a>怎样选择一个开源项目去学习</h3><ul>
+<li>文档要丰富，包括user guide，document api，从clone到运行环境配置，debug</li>
+<li>有测试用例，如果一个项目没有测试用例，那么这个项目最好不要去看</li>
+<li>blog post丰富</li>
+</ul>
+<h3 id="怎样学习一个开源项目"><a href="#怎样学习一个开源项目" class="headerlink" title="怎样学习一个开源项目"></a>怎样学习一个开源项目</h3><ul>
+<li>首先，网速要快。由于众所周知的原因，我们需要一个工具，跨过山和大海，推荐<code>clashx/clash</code></li>
+<li>详细阅读项目文档，design document等，如果是英文，最好直接自己阅读英文，而不是看别人已经翻译好的</li>
+<li>不要使用windows，选择mac或者linux</li>
+<li>配置好运行环境，能够debug，能够使用代码跳转，mac上推荐<code>vscode</code></li>
+<li>从sample开始，然后是测试用例，一点一点分解</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+  </div>
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="崔怀祥"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">崔怀祥</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/effectivecui" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;effectivecui" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/5258674355" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;5258674355" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/effectivecui" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;effectivecui" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-fw fa-rss"></i>RSS</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-wechat"></i>
+      欢迎关注公众号
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <div style="display: inline-block;">
+            <img src="/images/qrcode.jpg" alt="">
+            <p></p>
+          </div>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">崔怀祥</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme: 'forest',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+
+</body>
+</html>
