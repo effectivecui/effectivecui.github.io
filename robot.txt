@@ -10,4 +10,4 @@ Disallow: /css/
 Disallow: /fonts/
 Disallow: /vendors/
 
-Sitemap: https://micsay.com/micsaysite.xml
+Sitemap: https://micsay.com/sitemap.xml
