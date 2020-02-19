@@ -51,9 +51,9 @@
     <link href="https://micsay.com/2020/01/07/how-to-learn-a-project/"/>
     <id>https://micsay.com/2020/01/07/how-to-learn-a-project/</id>
     <published>2020-01-07T15:22:23.000Z</published>
-    <updated>2020-01-07T16:55:05.119Z</updated>
+    <updated>2020-02-19T04:31:19.161Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="怎样选择一个开源项目去学习"><a href="#怎样选择一个开源项目去学习" class="headerlink" title="怎样选择一个开源项目去学习"></a>怎样选择一个开源项目去学习</h3><ul><li>文档要丰富，包括user guide，document api，从clone到运行环境配置，debug</li><li>有测试用例，如果一个项目没有测试用例，那么这个项目最好不要去看</li><li>blog post丰富</li></ul><h3 id="怎样学习一个开源项目"><a href="#怎样学习一个开源项目" class="headerlink" title="怎样学习一个开源项目"></a>怎样学习一个开源项目</h3><ul><li>首先，网速要快。由于众所周知的原因，我们需要一个工具，跨过山和大海，推荐<code>clashx/clash</code></li><li>详细阅读项目文档，design document等，如果是英文，最好直接自己阅读英文，而不是看别人已经翻译好的</li><li>不要使用windows，选择mac或者linux</li><li>配置好运行环境，能够debug，能够使用代码跳转，mac上推荐<code>vscode</code></li><li>从sample开始，然后是测试用例，一点一点分解</li></ul>]]></content>
+    <content type="html"><![CDATA[<h3 id="怎样选择一个开源项目去学习"><a href="#怎样选择一个开源项目去学习" class="headerlink" title="怎样选择一个开源项目去学习"></a>怎样选择一个开源项目去学习</h3><ul><li>文档要丰富，包括user guide，document api，从clone到运行环境配置，debug</li><li>有测试用例，如果一个项目没有测试用例，那么这个项目最好不要去看</li><li>blog post丰富</li></ul><h3 id="怎样学习一个开源项目"><a href="#怎样学习一个开源项目" class="headerlink" title="怎样学习一个开源项目"></a>怎样学习一个开源项目</h3><ul><li>首先，网速要快。由于众所周知的原因，我们需要一个工具，跨过山和大海，推荐<code>clashx/clash</code></li><li>详细阅读项目文档，design document等，如果是英文，最好直接自己阅读英文，而不是看别人已经翻译好的</li><li>不要使用windows，选择mac或者linux</li><li>配置好运行环境，能够debug，能够使用代码跳转，mac上推荐<code>vscode</code></li><li>从sample开始，然后是测试用例，一点一点分解</li><li>如果改项目支持插件开发，则一定要去完整的看一遍插件开发流程，并尝试开发一个插件</li></ul>]]></content>
     
     <summary type="html">
     
