@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 12:17:04" itemprop="dateModified" datetime="2020-08-01T12:17:04+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 12:23:44" itemprop="dateModified" datetime="2020-08-01T12:23:44+08:00">2020-08-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -273,28 +273,28 @@
 <p>特别声明：本文未经许可禁止转载</p>
 </blockquote>
 <h3 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h3><ul>
-<li><code>vscode</code>是微软在<code>Electron</code>的基础上使用TypeScript开发的</li>
-<li>本文是基于vscode 1.36.0版本的基础上分析的</li>
-<li>本文重点解析vscode工程中，我认为值得学习的地方</li>
+<li><code>VS Code</code>是微软在<code>Electron</code>的基础上使用TypeScript开发的</li>
+<li>本文是基于VS Code 1.36.0版本的基础上分析的</li>
+<li>本文重点解析VS Code工程中，我认为值得学习的地方</li>
 <li>如有问题，可以留言</li>
 </ul>
 <h3 id="Chromium"><a href="#Chromium" class="headerlink" title="Chromium"></a>Chromium</h3><p>要讲<code>Electron</code>，必须先说<code>Chromium</code>。<code>Chromium</code>使用了多进程架构，分为<code>Browser Process</code>和<code>Render Process</code>，<code>Render Process</code>使用<code>Blink</code>和<code>V8</code>，<code>Blink</code>用于计算布局，<code>V8</code>用于运行<code>JavaScript</code>代码，真正渲染到屏幕上一个一个的像素，是在<code>Browser Process</code>完成的，<code>Browser Process</code>和<code>Render Process</code>通过<code>IPC进程通信</code>（使用Mojo），<code>Browser Process</code>可以保证安全（用于渲染到屏幕，管理Cookie、Storage、网络请求等），而<code>Render Process</code>是在沙箱里面运行的。</p>
 <h3 id="Electron"><a href="#Electron" class="headerlink" title="Electron"></a>Electron</h3><p><code>Electron</code>在<code>Chromuim</code>基础上，给<code>Browser Process</code>和<code>Render Process</code>都加进了<code>Node Environment</code>，这样，带来了<code>Node</code>开发者，带来了丰富的NPM包，并且，不论是在<code>Browser Process</code>还是<code>Render Process</code>，都能直接调用<code>Node API</code>，从而获得Native能力。同时，<code>Electron</code>还给<code>Browser Process</code>和<code>Render Process</code>加进了<code>Electron API</code>，为开发者提供<code>Browser Process</code>和<code>Render Process</code>的IPC通信API，以及提供一些必要的功能。<br>以下用主进程表示Browser Process，用渲染进程表示Render Process</p>
-<h3 id="为方便后文理解，先讲一下vscode初始化过程"><a href="#为方便后文理解，先讲一下vscode初始化过程" class="headerlink" title="为方便后文理解，先讲一下vscode初始化过程"></a>为方便后文理解，先讲一下vscode初始化过程</h3><blockquote>
+<h3 id="为方便后文理解，先讲一下VS-Code初始化过程"><a href="#为方便后文理解，先讲一下VS-Code初始化过程" class="headerlink" title="为方便后文理解，先讲一下VS Code初始化过程"></a>为方便后文理解，先讲一下VS Code初始化过程</h3><blockquote>
 <p>为方便起见，文件名不加后缀，比如<code>src/main</code>实际为<code>src/main.js</code>，而<code>src/vs/code/electron-main/main</code>实际为<code>src/vs/code/electron-main/main.ts</code></p>
 </blockquote>
 <ul>
 <li>Electron根据根目录下package.json文件中的main字段，在主进程加载<code>src/main</code>，处理本地语言配置以及<code>process.env</code></li>
 <li>加载<code>src/vs/code/electron-main/main</code>，实例化<code>CodeMain</code>类，调用该类中的<code>main()</code>方法，创建主进程中外层的<code>InstantiationService</code>,并实例化<code>CodeApplication</code>类，调用该类中的<code>startup()</code>方法<blockquote>
-<p><code>InstantiationService</code>用于实例化其他类，使得其他类在主进程或者渲染进程中，在保持单例的同时又能很方便的作为构造器参数传入，这个类是vscode工程中实现依赖注入的重要部分</p>
+<p><code>InstantiationService</code>用于实例化其他类，使得其他类在主进程或者渲染进程中，在保持单例的同时又能很方便的作为构造器参数传入，这个类是VS Code工程中实现依赖注入的重要部分</p>
 </blockquote>
 </li>
 <li>在<code>CodeApplication</code>类的<code>startup()</code>方法中，再次创建<code>InstantiationService</code>，该<code>InstantiationService</code>是外层<code>InstantiationService</code>的<code>child</code>，并且如果某个类的实例在当前窗口的<code>InstantiationService</code>中找不到时，会去外层的<code>InstantiationService</code>中查找，然后实例化各个<code>Service</code>类，并最终在<code>src/vs/code/electron-main/window</code>中调用<code>new BrowserWindow(options)</code>，打开窗口，携带处理完毕的配置参数加载渲染进程的代码<code>src/vs/code/electron-browser/workbench/workbench</code></li>
 <li>加载<code>src/vs/workbench/electron-browser/main</code>，实例化渲染进程各个<code>Service</code>类放入<code>serviceCollection</code>，然后用<code>serviceCollection</code>去实例化渲染进程的<code>InstantiationService</code></li>
 <li>加载后续代码，用TypeScript操作DOM，计算Layout，生成页面</li>
 </ul>
-<h3 id="用Service划分各个功能的界线"><a href="#用Service划分各个功能的界线" class="headerlink" title="用Service划分各个功能的界线"></a>用Service划分各个功能的界线</h3><p><code>vscode</code>中有许多<code>Service</code>，有的位于主进程，有的位于渲染进程，有的只在主进程使用，有的只在渲染进程使用，有的在主进程中定义逻辑，在渲染进程中通过Electron提供的IPC建立Proxy使用（对于<code>Service</code>使用者来说无感知），<code>Service</code>位于<code>src/vs/platform</code>目录，主要有<code>IInstantiationService</code>,<code>IEnvironmentService</code>,<code>IFileService</code>,<code>ILayoutService</code>,<code>INotificationService</code>,<code>IOpenerService</code>,<code>IStorageService</code>,<code>IWindowsService</code>,<code>IWindowsMainService</code>,<code>IWorkspacesService</code>,<code>IWorkspacesMainService</code>等</p>
-<h4 id="依赖注入Dependency-Injection"><a href="#依赖注入Dependency-Injection" class="headerlink" title="依赖注入Dependency Injection"></a>依赖注入Dependency Injection</h4><p>关于依赖注入的整体介绍，vscode wiki已经讲的很清楚了:</p>
+<h3 id="用Service划分各个功能的界线"><a href="#用Service划分各个功能的界线" class="headerlink" title="用Service划分各个功能的界线"></a>用Service划分各个功能的界线</h3><p><code>VS Code</code>中有许多<code>Service</code>，有的位于主进程，有的位于渲染进程，有的只在主进程使用，有的只在渲染进程使用，有的在主进程中定义逻辑，在渲染进程中通过Electron提供的IPC建立Proxy使用（对于<code>Service</code>使用者来说无感知），<code>Service</code>位于<code>src/vs/platform</code>目录，主要有<code>IInstantiationService</code>,<code>IEnvironmentService</code>,<code>IFileService</code>,<code>ILayoutService</code>,<code>INotificationService</code>,<code>IOpenerService</code>,<code>IStorageService</code>,<code>IWindowsService</code>,<code>IWindowsMainService</code>,<code>IWorkspacesService</code>,<code>IWorkspacesMainService</code>等</p>
+<h4 id="依赖注入Dependency-Injection"><a href="#依赖注入Dependency-Injection" class="headerlink" title="依赖注入Dependency Injection"></a>依赖注入Dependency Injection</h4><p>关于依赖注入的整体介绍，VS Code wiki已经讲的很清楚了:</p>
 <blockquote>
 <p>The code is organized around services of which most are defined in the <code>platform</code> layer. Services get to its clients via <code>constructor injection</code>.<br>A service definition is two parts: (1) the interface of a service, and (2) a service identifier - the latter is required because TypeScript doesn’t use nominal but structural typing. A service identifier is a decoration (as proposed for ES7) and should have the same name as the service interface.<br>Declaring a service dependency happens by adding a corresponding decoration to a constructor argument. In the snippet below <code>@IModelService</code> is the service identifier decoration and <code>IModelService</code> is the (optional) type annotation for this argument. When a dependency is optional, use the <code>@optional</code> decoration otherwise the instantiation service throws an error.</p>
 </blockquote>
@@ -322,19 +322,19 @@ graph LR;
 
 </li>
 </ul>
-<h3 id="Part"><a href="#Part" class="headerlink" title="Part"></a>Part</h3><p>打开vscode并新建一个窗口（默认配置下），可以将窗口分成几大部分：</p>
+<h3 id="Part"><a href="#Part" class="headerlink" title="Part"></a>Part</h3><p>打开VS Code并新建一个窗口（默认配置下），可以将窗口分成几大部分：</p>
 <ul>
 <li>TitleBarPart，位于顶部</li>
 <li>ActivityBarPart，位于最左侧，大部分由Icon构成</li>
 <li>SideBarPart，紧贴ActiviyBarPart右侧</li>
 <li>EditorPart，编辑器</li>
 <li>PanelPart，位于编辑器下面，由Terminal等构成</li>
-<li>StatusBarPart，位于最下面，显示状态、分支等<br>可见，vscode视图由Part构成。<code>Part</code>是vscode工程中的一个基础类，定义了许多抽象方法，其中，<code>protected createContentArea(parent: HTMLElement, options?: object): HTMLElement | null</code>方法，使用TypeScript操作DOM来用来定义视图</li>
+<li>StatusBarPart，位于最下面，显示状态、分支等<br>可见，VS Code视图由Part构成。<code>Part</code>是VS Code工程中的一个基础类，定义了许多抽象方法，其中，<code>protected createContentArea(parent: HTMLElement, options?: object): HTMLElement | null</code>方法，使用TypeScript操作DOM来用来定义视图</li>
 </ul>
 <h4 id="Part之用TypeScript操作DOM"><a href="#Part之用TypeScript操作DOM" class="headerlink" title="Part之用TypeScript操作DOM"></a>Part之用TypeScript操作DOM</h4><p>在<code>src/vs/base/browser/ui</code>目录下，定义了许多基础的组件，比如<code>SelectBox</code>,用<code>dom.append(container, $(&#39;.option-text&#39;));</code>形式和CSS，定义界面。</p>
-<h3 id="Command机制"><a href="#Command机制" class="headerlink" title="Command机制"></a>Command机制</h3><p>Command可以说是vscode定义的另一个非常好用的概念。他可以让用户通过<code>Shift+Command+P</code>选择Command然后执行，并且赋予了<code>vscode Extension</code>扩展Command的能力。Command支持插件进程和vscode进程相互调用。</p>
-<h3 id="Extension（插件）机制"><a href="#Extension（插件）机制" class="headerlink" title="Extension（插件）机制"></a>Extension（插件）机制</h3><p>软件开发中的开闭原则：开放扩展，关闭修改。Extension便是开闭原则的一个很好的实现。Chrome有插件，Cocos有插件，Hexo有插件，Webpack有插件，Gulp有插件，vscode也有插件</p>
-<p>vscode内置插件在<code>extension</code>目录下，内置插件分成两种，一种是本地内置插件，另一种是打包是从Extension Markets下载的内置插件，插件开发文档<a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">点这</a>。从插件大类来看，也可以分成两种，一种是<code>Normal Extension</code>，可以使用VS Code API，另一种是<code>Debugger Extension</code>，用于运行Debug Adapter。</p>
+<h3 id="Command机制"><a href="#Command机制" class="headerlink" title="Command机制"></a>Command机制</h3><p>Command可以说是VS Code定义的另一个非常好用的概念。他可以让用户通过<code>Shift+Command+P</code>选择Command然后执行，并且赋予了<code>VS Code Extension</code>扩展Command的能力。Command支持插件进程和VS Code进程相互调用。</p>
+<h3 id="Extension（插件）机制"><a href="#Extension（插件）机制" class="headerlink" title="Extension（插件）机制"></a>Extension（插件）机制</h3><p>软件开发中的开闭原则：开放扩展，关闭修改。Extension便是开闭原则的一个很好的实现。Chrome有插件，Cocos有插件，Hexo有插件，Webpack有插件，Gulp有插件，VS Code也有插件</p>
+<p>VS Code内置插件在<code>extension</code>目录下，内置插件分成两种，一种是本地内置插件，另一种是打包是从Extension Markets下载的内置插件，插件开发文档<a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">点这</a>。从插件大类来看，也可以分成两种，一种是<code>Normal Extension</code>，可以使用VS Code API，另一种是<code>Debugger Extension</code>，用于运行Debug Adapter。</p>
 <h3 id="Gulp编译打包"><a href="#Gulp编译打包" class="headerlink" title="Gulp编译打包"></a>Gulp编译打包</h3><p>Gulp官方介绍如下：</p>
 <blockquote>
 <ul>
@@ -344,7 +344,7 @@ graph LR;
 <li>Simple - By providing only a minimal API surface, gulp is easy to learn and simple to use</li>
 </ul>
 </blockquote>
-<p>vscode打包脚本位于<code>build</code>目录下，在执行<code>gulp watch</code>之后，gulp会首先加载根目录的<code>gulpfile.js</code>文件，进而加载<code>build</code>目录下一系列<code>gulp.*.js</code>文件，<code>build/gulp.*.js</code>文件中定义了许多<code>gulp task</code>，各个task可以相互依赖。如果想运行vscode，可以参考<a href="https://github.com/microsoft/vscode/wiki/How-to-Contribute" target="_blank" rel="noopener">官方文档</a>。</p>
+<p>VS Code打包脚本位于<code>build</code>目录下，在执行<code>gulp watch</code>之后，gulp会首先加载根目录的<code>gulpfile.js</code>文件，进而加载<code>build</code>目录下一系列<code>gulp.*.js</code>文件，<code>build/gulp.*.js</code>文件中定义了许多<code>gulp task</code>，各个task可以相互依赖。如果想运行VS Code，可以参考[官方文档](<a href="https://github.com/microsoft/VS" target="_blank" rel="noopener">https://github.com/microsoft/VS</a> Code/wiki/How-to-Contribute)。</p>
 <h3 id="VS-Code调试架构"><a href="#VS-Code调试架构" class="headerlink" title="VS Code调试架构"></a>VS Code调试架构</h3><p>VS Code可以调试<code>javascript</code>、<code>python</code>、<code>php</code>、<code>c</code>各种语言，而实现这些调试等基础就是<code>DAP</code>协议，官方对<code>DAP</code>的图示如下：</p>
 <p><img src="/images/debug-arch1.png" alt="dap"></p>
 <p>VS Code 定义了一种抽象的协议即DAP，并实现了一种通用的调试UI，VS Code使用该协议与各种语言的调试进程通信，但是，各种语言不会实现DAP协议，因此，需要一个Adapter，即<code>Debug Adapter（DA）</code>，DA运行在一个单独的进程里面，与调试进程通信。<br>如果你想调试某种语言，首先，需要先实现该语言的<code>Debug Adapter</code>并以<code>Debugger Extension</code>的形式，安装到VS Code上，关于如何实现，你可以查看<a href="https://code.visualstudio.com/api/extension-guides/debugger-extension" target="_blank" rel="noopener">官方文档</a>。当然，大部分语言的<code>Debug Adapter</code>都已经被实现，你可以直接使用。</p>
