@@ -244,7 +244,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-16 23:42:55" itemprop="dateModified" datetime="2020-01-16T23:42:55+08:00">2020-01-16</time>
+                <time title="修改时间：2020-08-01 12:17:04" itemprop="dateModified" datetime="2020-08-01T12:17:04+08:00">2020-08-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,9 +280,6 @@
 </ul>
 <h3 id="Chromium"><a href="#Chromium" class="headerlink" title="Chromium"></a>Chromium</h3><p>要讲<code>Electron</code>，必须先说<code>Chromium</code>。<code>Chromium</code>使用了多进程架构，分为<code>Browser Process</code>和<code>Render Process</code>，<code>Render Process</code>使用<code>Blink</code>和<code>V8</code>，<code>Blink</code>用于计算布局，<code>V8</code>用于运行<code>JavaScript</code>代码，真正渲染到屏幕上一个一个的像素，是在<code>Browser Process</code>完成的，<code>Browser Process</code>和<code>Render Process</code>通过<code>IPC进程通信</code>（使用Mojo），<code>Browser Process</code>可以保证安全（用于渲染到屏幕，管理Cookie、Storage、网络请求等），而<code>Render Process</code>是在沙箱里面运行的。</p>
 <h3 id="Electron"><a href="#Electron" class="headerlink" title="Electron"></a>Electron</h3><p><code>Electron</code>在<code>Chromuim</code>基础上，给<code>Browser Process</code>和<code>Render Process</code>都加进了<code>Node Environment</code>，这样，带来了<code>Node</code>开发者，带来了丰富的NPM包，并且，不论是在<code>Browser Process</code>还是<code>Render Process</code>，都能直接调用<code>Node API</code>，从而获得Native能力。同时，<code>Electron</code>还给<code>Browser Process</code>和<code>Render Process</code>加进了<code>Electron API</code>，为开发者提供<code>Browser Process</code>和<code>Render Process</code>的IPC通信API，以及提供一些必要的功能。<br>以下用主进程表示Browser Process，用渲染进程表示Render Process</p>
-<blockquote>
-<p>崔的感慨：这个世界不过是简单的数学，数字（元素、基础事物），加减乘除（公式），以及等于号（认可不认可或是不是真理）</p>
-</blockquote>
 <h3 id="为方便后文理解，先讲一下vscode初始化过程"><a href="#为方便后文理解，先讲一下vscode初始化过程" class="headerlink" title="为方便后文理解，先讲一下vscode初始化过程"></a>为方便后文理解，先讲一下vscode初始化过程</h3><blockquote>
 <p>为方便起见，文件名不加后缀，比如<code>src/main</code>实际为<code>src/main.js</code>，而<code>src/vs/code/electron-main/main</code>实际为<code>src/vs/code/electron-main/main.ts</code></p>
 </blockquote>
@@ -335,15 +332,9 @@ graph LR;
 <li>StatusBarPart，位于最下面，显示状态、分支等<br>可见，vscode视图由Part构成。<code>Part</code>是vscode工程中的一个基础类，定义了许多抽象方法，其中，<code>protected createContentArea(parent: HTMLElement, options?: object): HTMLElement | null</code>方法，使用TypeScript操作DOM来用来定义视图</li>
 </ul>
 <h4 id="Part之用TypeScript操作DOM"><a href="#Part之用TypeScript操作DOM" class="headerlink" title="Part之用TypeScript操作DOM"></a>Part之用TypeScript操作DOM</h4><p>在<code>src/vs/base/browser/ui</code>目录下，定义了许多基础的组件，比如<code>SelectBox</code>,用<code>dom.append(container, $(&#39;.option-text&#39;));</code>形式和CSS，定义界面。</p>
-<blockquote>
-<p>崔的感概：定义好一个概念（抽象），然后充分利用好这个概念</p>
-</blockquote>
 <h3 id="Command机制"><a href="#Command机制" class="headerlink" title="Command机制"></a>Command机制</h3><p>Command可以说是vscode定义的另一个非常好用的概念。他可以让用户通过<code>Shift+Command+P</code>选择Command然后执行，并且赋予了<code>vscode Extension</code>扩展Command的能力。Command支持插件进程和vscode进程相互调用。</p>
 <h3 id="Extension（插件）机制"><a href="#Extension（插件）机制" class="headerlink" title="Extension（插件）机制"></a>Extension（插件）机制</h3><p>软件开发中的开闭原则：开放扩展，关闭修改。Extension便是开闭原则的一个很好的实现。Chrome有插件，Cocos有插件，Hexo有插件，Webpack有插件，Gulp有插件，vscode也有插件</p>
-<blockquote>
-<p>崔的感慨：Extension就如游戏中的挂，能够开挂，说明这个游戏很火很好玩，另外，挂其实赋予了某些人特权，特权总是能够吸引人</p>
-</blockquote>
-<p>vscode内置插件在<code>extension</code>目录下，内置插件分成两种，一种是本地内置插件，另一种是打包是从Extension Markets下载的内置插件，插件开发文档<a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">点这</a></p>
+<p>vscode内置插件在<code>extension</code>目录下，内置插件分成两种，一种是本地内置插件，另一种是打包是从Extension Markets下载的内置插件，插件开发文档<a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">点这</a>。从插件大类来看，也可以分成两种，一种是<code>Normal Extension</code>，可以使用VS Code API，另一种是<code>Debugger Extension</code>，用于运行Debug Adapter。</p>
 <h3 id="Gulp编译打包"><a href="#Gulp编译打包" class="headerlink" title="Gulp编译打包"></a>Gulp编译打包</h3><p>Gulp官方介绍如下：</p>
 <blockquote>
 <ul>
@@ -354,8 +345,11 @@ graph LR;
 </ul>
 </blockquote>
 <p>vscode打包脚本位于<code>build</code>目录下，在执行<code>gulp watch</code>之后，gulp会首先加载根目录的<code>gulpfile.js</code>文件，进而加载<code>build</code>目录下一系列<code>gulp.*.js</code>文件，<code>build/gulp.*.js</code>文件中定义了许多<code>gulp task</code>，各个task可以相互依赖。如果想运行vscode，可以参考<a href="https://github.com/microsoft/vscode/wiki/How-to-Contribute" target="_blank" rel="noopener">官方文档</a>。</p>
+<h3 id="VS-Code调试架构"><a href="#VS-Code调试架构" class="headerlink" title="VS Code调试架构"></a>VS Code调试架构</h3><p>VS Code可以调试<code>javascript</code>、<code>python</code>、<code>php</code>、<code>c</code>各种语言，而实现这些调试等基础就是<code>DAP</code>协议，官方对<code>DAP</code>的图示如下：</p>
+<p><img src="/images/debug-arch1.png" alt="dap"></p>
+<p>VS Code 定义了一种抽象的协议即DAP，并实现了一种通用的调试UI，VS Code使用该协议与各种语言的调试进程通信，但是，各种语言不会实现DAP协议，因此，需要一个Adapter，即<code>Debug Adapter（DA）</code>，DA运行在一个单独的进程里面，与调试进程通信。<br>如果你想调试某种语言，首先，需要先实现该语言的<code>Debug Adapter</code>并以<code>Debugger Extension</code>的形式，安装到VS Code上，关于如何实现，你可以查看<a href="https://code.visualstudio.com/api/extension-guides/debugger-extension" target="_blank" rel="noopener">官方文档</a>。当然，大部分语言的<code>Debug Adapter</code>都已经被实现，你可以直接使用。</p>
 <h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle</a><br><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/decorators.html</a><br><a href="https://github.com/microsoft/vscode/wiki/Source-Code-Organization" target="_blank" rel="noopener">https://github.com/microsoft/vscode/wiki/Source-Code-Organization</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle</a><br><a href="https://www.typescriptlang.org/docs/handbook/decorators.html" target="_blank" rel="noopener">https://www.typescriptlang.org/docs/handbook/decorators.html</a><br><a href="https://github.com/microsoft/vscode/wiki/Source-Code-Organization" target="_blank" rel="noopener">https://github.com/microsoft/vscode/wiki/Source-Code-Organization</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy</a><br><a href="https://code.visualstudio.com/api/extension-guides/debugger-extension" target="_blank" rel="noopener">https://code.visualstudio.com/api/extension-guides/debugger-extension</a></p>
 </blockquote>
 
       
