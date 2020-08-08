@@ -8,7 +8,7 @@
 </blockquote>
 <h3 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h3><ul>
 <li>不能免俗，我也要做Vue源码解析了</li>
-<li>本文基于<code>Vue 2.5.8-beta</code>版本进行分析</li>
+<li>本文基于<code>Vue 2.5.18-beta.0</code>版本进行分析</li>
 <li>源码讲解的第一行附了源码路径，可供查看，我会在我认为重要的地方加注释</li>
 <li>如果有疑问，可以留言或者关注我公众号并发送消息</li>
 <li>本文通俗易懂，不人云亦云，应该都能看得懂</li>
