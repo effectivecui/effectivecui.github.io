@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://micsay.com/"/>
-  <updated>2020-08-08T09:38:25.028Z</updated>
+  <updated>2020-10-08T14:18:34.500Z</updated>
   <id>https://micsay.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>智能电视开机直接看电视思路</title>
+    <link href="https://micsay.com/2020/10/08/mytv-assessiblity/"/>
+    <id>https://micsay.com/2020/10/08/mytv-assessiblity/</id>
+    <published>2020-10-08T13:37:21.000Z</published>
+    <updated>2020-10-08T14:18:34.500Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>特别声明：本文未经许可禁止转载</p></blockquote><h3 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h3><p>国庆逢中秋长假，回家休假，我妈吐槽家里小米智能电视，该智能的地方不智能（比如开机直接看电视），不该智能的地方超智能（比如随时随地提醒你开通小米影视会员、屏保结束就显示超亮眼的广告，做广告比做产品做的都用心），真的是，需要它的地方它不行，不需要的地方比谁都聪明。我也怀疑，我花钱买了一个小米电视，买来之后，这电视仍旧不是我家的，而是小米的，小米想放广告就放广告，想看电视直播？没门。白马非马，智能电视非电视。</p><h3 id="问题调查以及解决"><a href="#问题调查以及解决" class="headerlink" title="问题调查以及解决"></a>问题调查以及解决</h3><h4 id="问题一：看不了电视直播"><a href="#问题一：看不了电视直播" class="headerlink" title="问题一：看不了电视直播"></a>问题一：看不了电视直播</h4><p>小米电视应用商店里面，是搜不到电视直播app的，经过一番搜索，使用U盘，安装成功，问题解决。</p><h4 id="问题二：开机不能直接进电视直播"><a href="#问题二：开机不能直接进电视直播" class="headerlink" title="问题二：开机不能直接进电视直播"></a>问题二：开机不能直接进电视直播</h4><p>对于年轻人来说，开机显示小米桌面，可能无所谓。但是对于年纪稍大的人来说，就没有那么方便了。年纪稍大的人，本来能用手机就不错了，现在想看电视，都还要使用遥控器左右选择，进入“我的”，进入”我的应用“，选择电视直播的app，偶尔还要将烦人的购买影视会员弹窗取消掉，实在麻烦。</p><p>我买的小米电视（由于它老显示广告，所以我觉得目前它不是我家的电视，所以称它为我买的小米电视），内置的系统是Android 6.0，如果想Root后让电视直播app支持自启动，会比较麻烦，并且Root后，系统可能会不稳定，不适合我妈这种小白。经过一番调研，我放弃了Root的想法。</p><p>小米电视只允许它内置的应用自启动，其他应用不行，自启动的应用有：小米桌面，小爱同学（遥控器语音控制）等等。小米桌面是Android的主屏幕，小爱同学是使用的Android无障碍。那么，想让电视直播app自启动，就有了一点转机。</p><p>方案一：替换小米桌面。将小米桌面直接替换成其他的支持自定义的TV桌面，减少进入电视直播app的操作步骤。经过调研，此方案可行，也有人实施了，但是是不可逆的，因为小米电视桌面被设死了，无法通过系统设置更改主屏幕，需要把小米电视桌面直接替换掉，方案欠佳。</p><p>方案二：仿照小爱同学，走无障碍的路。自己写一个无障碍app（我命名为我家辅助）并启用，则小米电视开机时，我家辅助启动，再在我家辅助中，启动电视直播app的Activity，则实现了小米电视启动直接进入电视直播，方案完美。</p><h3 id="问题延伸"><a href="#问题延伸" class="headerlink" title="问题延伸"></a>问题延伸</h3><p>使用Android的无障碍，走的是Android官方的路，不怕小米电视封杀。用无障碍实现这个开机进入电视直播的功能，实在是小事一桩。无障碍如果继续扩展，则还可以用于去广告，比如干掉烦人的小米影视会员弹窗。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;特别声明：本文未经许可禁止转载&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;提出问题&quot;&gt;&lt;a href=&quot;#提出问题&quot; class=&quot;headerlink&quot; title=&quot;提出问题&quot;&gt;&lt;/a&gt;提出问题&lt;/h3&gt;&lt;p&gt;国庆逢中秋长假，回家休假
+      
+    
+    </summary>
+    
+    
+      <category term="方法" scheme="https://micsay.com/categories/%E6%96%B9%E6%B3%95/"/>
+    
+    
+      <category term="思路" scheme="https://micsay.com/tags/%E6%80%9D%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue源码解析</title>
